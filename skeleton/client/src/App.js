@@ -6,7 +6,8 @@ import { delay } from 'q';
 import UWUForm from './components/UWUForm';
 import style from 'bootstrap/dist/css/bootstrap.css';
 import Warning from './components/Warning';
- 
+import Item from './components/Item';
+import Family from './components/Family';
  
  
  
@@ -151,10 +152,7 @@ class App extends Component {
     const { data } = this.state;
     return (
       <div>
-      <Warning/>
-      <UWUForm propName="http://www.lolcats.com"/>
-      <UWUForm/>
-      <UWUForm/>
+        <Family/>
       </div>
     );
   }
