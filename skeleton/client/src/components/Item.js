@@ -8,24 +8,64 @@ import style from 'bootstrap/dist/css/bootstrap.css';
 class Item extends Component {
 	constructor(props) {
     super(props);
-    this.state={show: true}
+    this.state={show: true,
+                data:[]}
    	
-	}
+    }
+    componentDidMount() {
+        this.getDataFromDb();
+      //  if (!this.state.intervalIsSet) {
+        if (this.state.intervalIsSet) {
+            let interval = setInterval(this.getDataFromDb, 1000);
+          this.setState({ intervalIsSet: interval });
+        }
+      }
+      getDataFromDb = () => {
+        fetch('http://localhost:3001/api/getData')
+          .then((data) => data.json())
+          .then((res) => this.setState({ data: res.data }));
+      };
+      deleteFromDB = async (idTodelete) => {
+          this.setState({show:false})
+        parseInt(idTodelete);
+        let objIdToDelete = null;
+         this.state.data.forEach((dat) => {
+          if (dat.id == idTodelete) {
+            objIdToDelete = dat._id;
+          }
+        });
+    
+        await axios.delete('http://localhost:3001/api/deleteData', {
+          data: {
+            id: objIdToDelete,
+          },
+        });
+      };
+    
+        
 
 	render() {
 		return(
 			<div>
-                <Card>
+                {this.state.show &&<Card>
                 <Card.Body>
-                    <Card.Title>Item</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">{this.props.itemName}</Card.Subtitle>
+                    <Card.Title>{this.props.itemName}</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">{`stats for ${this.props.people}`}</Card.Subtitle>
                     <Card.Text>
-                    {this.props.timeLast}
+                    {`quantity: ${this.props.quantity}`}
                     </Card.Text>
-                    <Card.Link href="#">Card Link</Card.Link>
-                    <Card.Link href="#">Another Link</Card.Link>
+                    <Card.Text>
+                    {`lasts for one: ${this.props.forone}`}
+                    </Card.Text><Card.Text>
+                    {`lasts in total: ${this.props.timeLast} days`}
+                    </Card.Text><Card.Text>
+                    {`expires by: ${this.props.expDate}/2020`}
+                    </Card.Text><Card.Text>
+                    {this.props.surplus>0?`surplus: ${this.props.surplus} days of extra ${this.props.itemName} after the exp date. Consider Donating ${this.props.surplus/(this.props.timeLast/this.props.quantity)} units! `:`Quantity To Buy: maybe buy ${this.props.surplus*-1/(this.props.timeLast/this.props.quantity)} more units`}
+                    </Card.Text>
+                    <Card.Link onClick={() => this.deleteFromDB(this.props.theid)} href="#">Delete</Card.Link>
                 </Card.Body>
-                </Card>
+                </Card>}
             </div>
 		)
 	}

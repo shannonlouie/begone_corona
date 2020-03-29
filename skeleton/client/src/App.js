@@ -8,6 +8,8 @@ import style from 'bootstrap/dist/css/bootstrap.css';
 import Warning from './components/Warning';
 import Item from './components/Item';
 import Family from './components/Family';
+import {Card, Form, Button, Nav, FormControl, Alert, Navbar} from 'react-bootstrap';
+
  
  
  
@@ -152,6 +154,20 @@ class App extends Component {
     const { data } = this.state;
     return (
       <div>
+        
+  <Navbar bg="dark" variant="dark">
+    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+    <Nav className="mr-auto">
+      <Nav.Link href="#home">Home</Nav.Link>
+      <Nav.Link href="#features">Features</Nav.Link>
+      <Nav.Link href="#pricing">Pricing</Nav.Link>
+    </Nav>
+    <Form inline>
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+      <Button variant="outline-info">Search</Button>
+    </Form>
+  </Navbar>
+
         <Family/>
       </div>
     );

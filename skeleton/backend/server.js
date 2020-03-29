@@ -12,7 +12,8 @@ const router = express.Router();
 
 // this is our MongoDB database
 const dbRoute =
-  'mongodb+srv://musicalSteve:stevethesteamroller@cluster0-ch5zi.mongodb.net/test?retryWrites=true&w=majority';
+'mongodb+srv://musicalSteve:stevethesteamroller@cluster0-w8skt.mongodb.net/test?retryWrites=true&w=majority'  
+//'mongodb+srv://musicalSteve:stevethesteamroller@cluster0-ch5zi.mongodb.net/test?retryWrites=true&w=majority';
 
   //'mongodb://<your-db-username-here>:<your-db-password-here>@ds249583.mlab.com:49583/fullstack_app';
 

@@ -8,7 +8,14 @@ import Item from './Item'
 class Grocery extends Component {
 	constructor(props) {
     super(props);
-    this.state={show: true}
+    this.state={show: true,
+                items: [{itemName:"shatatoes", 
+                         timeLast: "38 days"}, 
+                         {itemName: "soup", 
+                         timeLast: "8 days"}, 
+                         {itemName: "chicken", 
+                         timeLast: "28 days"}]
+                }
    	
 	}
 
@@ -18,10 +25,7 @@ class Grocery extends Component {
                 <Card>
                 <Card.Body>
                     <Card.Title>Groceries:</Card.Title>
-                    
-                    <Item itemName="shatatoes" timeLast="38 days"/>
-                    <Item itemName="soup" timeLast="8 days"/>
-                    <Item itemName="chicken" timeLast="28 days"/>
+                    {this.props.children}
                 </Card.Body>
                 </Card>
             </div>

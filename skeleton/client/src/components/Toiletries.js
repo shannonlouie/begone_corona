@@ -16,9 +16,10 @@ class Toiletries extends Component {
 		return(
             <div>
                 <Card>
+                <Card.Body>
                     <Card.Title>Toiletries:</Card.Title>
                     {this.props.children}
-                
+                </Card.Body>
                 </Card>
             </div>
 		)
