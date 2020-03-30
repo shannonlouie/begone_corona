@@ -28,8 +28,9 @@ class App extends Component {
       <div>      <Router>
         <Fragment>
           <Route component={Navigation} />
-          <Route exact path="/" component={Mapp} />
+          <Route exact path="/" component={Landing} />
             <Switch>
+            <Route exact path="/home" component={Mapp}/>
               <Route exact path="/family" component={Family}/>
               <Route exact path="/Mapp2" component={Mapp2}/>
               <Route exact path="/BucketList" component={Family2}/>

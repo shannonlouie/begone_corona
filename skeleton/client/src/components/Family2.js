@@ -170,7 +170,9 @@ class Family2 extends Component {
 			<div>
 <Card>
         <Card.Body>
-          <Card.Title>Bucket List: Quarantine COVID-19 Edition</Card.Title>
+        <Card.Title>Bucket List: Quarantine COVID-19 Edition</Card.Title>
+
+          <Card.Title>Bucket List: Keep Calm and Stay Organized!</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">{this.props.itemName}</Card.Subtitle>
         </Card.Body>
         </Card>

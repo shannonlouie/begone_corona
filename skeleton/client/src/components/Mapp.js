@@ -137,7 +137,6 @@ handleClick = () => {
 						containerElement={<div style={{ height: `100%` }} />}
 						mapElement={<div style={{ height: `100%` }} />}
 						showLegend={true}
-						onClick={this.handleClick}
 					/>
 				</div>
 

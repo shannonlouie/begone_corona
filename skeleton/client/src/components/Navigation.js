@@ -9,6 +9,12 @@ class Navigation extends Component {
         const showLinks = () => {
     
             return <Fragment>
+                <Nav.Link href="/home" className="text-white">
+                    <span className="green-hover">
+                        Home
+                    </span>
+                </Nav.Link>
+
                 <Nav.Link href="/family" className="text-white">
                     <span className="green-hover">
                         Calculate Surplus
@@ -32,7 +38,7 @@ class Navigation extends Component {
             <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
                 <Navbar.Brand className="f3 fw7 ml4" href="/">
                     <span className="green-hover">
-                          Antihordinator
+                          Antihoardinator
                     </span>
                 </Navbar.Brand>
                 <Nav className="ml-auto mr4">

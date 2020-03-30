@@ -66,23 +66,7 @@ function Map(props) {
             }}
 		/>
 	))}
-	{props.crs.map(loc => (
-		<Marker
-		key={JSON.parse(loc["text"])["properties"]["ID"]}
-		position={{
-			lat:JSON.parse(loc["text"])["geometry"]["coordinates"][1],
-			lng:JSON.parse(loc["text"])["geometry"]["coordinates"][0]
-		}}
-	    onClick={() => {
-            setSelectedPark(JSON.parse(loc["text"]));
-          }}
-            icon={{
-              url: "/red.png",
-              scaledSize: new window.google.maps.Size(75,75)
-            }}
-	
-		/>
-	))}
+
 	{props.type.map(loc => (
 		<Marker
 		key={JSON.parse(loc["text"])["properties"]["ID"]}
@@ -112,16 +96,13 @@ function Map(props) {
             lng: selectedPark.geometry.coordinates[0]
           }}
         >
-          <div>
-            <p>LATITUDE: {selectedPark.geometry.coordinates[0]}</p>
-            <p>LONGITUDE: {selectedPark.geometry.coordinates[1]}</p>
-          </div>
+					<CalloutCard showLogo={false} name="Alta Bates" email="contact@abates.com" phone="(510) 655-4000" urgentNeeds="toilet paper"/>
         </InfoWindow>
       )}
     </GoogleMap>
 
-    {!props.showLegend && <div style={{width:"50vw", height:"100vh", position:"absolute",top:20,right:0}}>
-					<CalloutCard name="Alta Bates" email="contact@abates.com" phone="(510) 655-4000" urgentNeeds="toilet paper"/>
+    {!props.showLegend && <div style={{width:"50vw", height:"100vh", position:"absolute",top:55,right:0}}>
+					<CalloutCard name="Alta Bates" email="contact@abates.com" phone="(510) 655-4000" urgentNeeds="toilet paper" showLogo={true}/>
 					</div>}
     {props.showLegend &&<div style={{width:"100vw", height:"20vh", position:"absolute",bottom:95,right:0}}><Legend/></div>}
     </div>

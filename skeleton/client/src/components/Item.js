@@ -50,12 +50,12 @@ class Item extends Component {
                 {this.state.show &&<Card>
                 <Card.Body style={{"backgroundColor":"#E6FFFA"}}>
                     <Card.Title>{this.props.itemName}</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">{`stats for ${this.props.people}`}</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text-muted">{`stats for ${this.props.people} people`}</Card.Subtitle>
                     <Card.Text>
-                    {`quantity: ${this.props.quantity}`}
+                    {`quantity: ${this.props.quantity} units`}
                     </Card.Text>
                     <Card.Text>
-                    {`lasts for one: ${this.props.forone}`}
+                    {`one unit lasts one person: ${this.props.forone} days`}
                     </Card.Text><Card.Text>
                     {`lasts in total: ${this.props.timeLast} days`}
                     </Card.Text><Card.Text>

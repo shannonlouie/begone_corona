@@ -9,6 +9,7 @@ import Image from 'react-bootstrap/Image';
 import emailPic from '../images/email-icon1.png';
 import phonePic from '../images/phone-icon1.png';
 import urgentNeedsPic from '../images/list-icon1.png';
+import sutterHealth from '../images/sutter-health-logo-png-16.png'
 
 class CalloutCard extends Component {
 	constructor(props) {
@@ -22,18 +23,17 @@ class CalloutCard extends Component {
 			<div>
 				<Card style={{"backgroundColor":"#B2EADE"}}>
           <Card style={{ width: '100%', height:'100vh', margin:5, "backgroundColor":"#E6FFFA", padding:"5px"}}>
-          <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-          <Card.Body>
             <Card.Title>{this.props.name}</Card.Title>
-          </Card.Body>
+            {this.props.showLogo && <Image style={{height:150,width:150,margin:3}}src={sutterHealth} thumbnail />}
           <ListGroup className="list-group-flush">
             <ListGroupItem><Image src={emailPic} thumbnail />{this.props.email}</ListGroupItem>
-            <ListGroupItem><Image src={phonePic} thumbnail />{this.props.phoneNumber}</ListGroupItem>
-            <ListGroupItem><Image src={urgentNeedsPic} thumbnail /><Card.Link href="#">List of Urgent Needs</Card.Link></ListGroupItem>
+            <ListGroupItem><Image src={phonePic} thumbnail />{this.props.phone}</ListGroupItem>
+            <ListGroupItem><Image src={urgentNeedsPic} thumbnail /><Card.Text href="#">List of Urgent Needs</Card.Text>
+            <Card.Text href="#">N95 masks</Card.Text><Card.Text href="#">hand sanitizer</Card.Text></ListGroupItem>
           </ListGroup>
           <Card.Body>
         <Card.Link href="#">Google Maps Location</Card.Link>
-        <Card.Link href="#">Sign up to donate</Card.Link>
+        <Card.Link href="https://forms.gle/XUXZsx6U61RwnByn7">Sign up to donate</Card.Link>
   </Card.Body>
 </Card>
         </Card>

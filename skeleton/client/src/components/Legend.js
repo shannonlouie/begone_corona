@@ -25,24 +25,20 @@ class Legend extends Component {
             <Card.Text>
               <Form>
               {['checkbox'].map((type) => (
-                <Form.Check 
-                  label={`Hospitals`}
-                  />
+               <div> <input checked={true}  type="checkbox"/><img style={{height:20, width:20}}src="/green.png"/> Hospitals
+                   </div>
                 ))}
               </Form>
               <Form>
               {['checkbox'].map((type) => (
-                <Form.Check 
-                  label={`Homeless Shelters`}
-                  />
+                <div> <input checked={true} type="checkbox"/><img style={{height:20, width:20}}src="/blue.png"/> Homeless Shelters
+                </div>
                 ))}
               </Form>
               <Form>
               {['checkbox'].map((type) => (
-                <Form.Check 
-                  label={`Food Pantries`}
-                  />
-                ))}
+                <div> <input checked={false}  type="checkbox"/><img style={{height:20, width:20}}src="/red.png"/> Food Pantries
+                   </div>                ))}
               </Form>
 
             <InputGroup className="mb-3">
@@ -56,7 +52,7 @@ class Legend extends Component {
             </InputGroup.Append>
           </InputGroup>
             </Card.Text>
-            <Button variant="primary" size="lg" block>
+            <Button href= "https://forms.gle/a3QbUgEcH8Hhs1kz9" variant="primary" size="lg" block>
               Submit Request for Supplies
             </Button>
           </Card.Body>
