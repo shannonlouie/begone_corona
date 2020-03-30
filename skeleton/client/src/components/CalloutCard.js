@@ -6,6 +6,9 @@ import {Card, Form, Button, Alert, ListGroup, ListGroupItem} from 'react-bootstr
 import style from 'bootstrap/dist/css/bootstrap.css';
 import Item from './Item';
 import Image from 'react-bootstrap/Image';
+import emailPic from '../images/email-icon1.png';
+import phonePic from '../images/phone-icon1.png';
+import urgentNeedsPic from '../images/list-icon1.png';
 
 class CalloutCard extends Component {
 	constructor(props) {
@@ -24,12 +27,12 @@ class CalloutCard extends Component {
             <Card.Title>{this.props.name}</Card.Title>
           </Card.Body>
           <ListGroup className="list-group-flush">
-            <ListGroupItem><Image src="holder.js/171x180" thumbnail />{this.props.email}</ListGroupItem>
-            <ListGroupItem><Image src="holder.js/171x180" thumbnail />{this.props.phoneNumber}</ListGroupItem>
-            <ListGroupItem><Image src="holder.js/171x180" thumbnail /><Card.Link href="#">Google Maps Location</Card.Link></ListGroupItem>
+            <ListGroupItem><Image src={emailPic} thumbnail />{this.props.email}</ListGroupItem>
+            <ListGroupItem><Image src={phonePic} thumbnail />{this.props.phoneNumber}</ListGroupItem>
+            <ListGroupItem><Image src={urgentNeedsPic} thumbnail /><Card.Link href="#">List of Urgent Needs</Card.Link></ListGroupItem>
           </ListGroup>
           <Card.Body>
-        <Card.Link href="#"><Image src="holder.js/171x180" thumbnail />List of Urgent Needs</Card.Link>
+        <Card.Link href="#">Google Maps Location</Card.Link>
         <Card.Link href="#">Sign up to donate</Card.Link>
   </Card.Body>
 </Card>
