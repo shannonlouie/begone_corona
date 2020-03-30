@@ -48,7 +48,7 @@ class Item extends Component {
 		return(
 			<div>
                 {this.state.show &&<Card>
-                <Card.Body>
+                <Card.Body style={{"backgroundColor":"#E6FFFA"}}>
                     <Card.Title>{this.props.itemName}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{`stats for ${this.props.people}`}</Card.Subtitle>
                     <Card.Text>

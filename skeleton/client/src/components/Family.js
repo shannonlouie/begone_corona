@@ -167,14 +167,14 @@ class Family extends Component {
     const { data } = this.state;
 
 		return(
-			<div>
+			<div style={{"backgroundColor":"#B2EADE"}}>
                 <Card>
-                <Card.Body>
+                <Card.Body style={{"backgroundColor":"#B2EADE"}}>
                     <Card.Title>Family</Card.Title>
                     <Form>
                     <Form.Group controlId="exampleForm.ControlTextarea1">
                         <Form.Label>Number of people in your family</Form.Label>
-                        <Form.Control as="textarea" rows="1" onChange = {this.handleChange}/>
+                        <Form.Control  as="textarea" rows="1" onChange = {this.handleChange}/>
                     </Form.Group>
                     </Form>
                     <Form>
