@@ -1,14 +1,6 @@
 // /client/App.js
 import React, { Component } from 'react';
-import axios from 'axios';
-import { blockStatement } from '@babel/types';
-import { delay } from 'q';
-import UWUForm from './components/UWUForm';
-import style from 'bootstrap/dist/css/bootstrap.css';
-import Warning from './components/Warning';
-import Item from './components/Item';
 import Family from './components/Family';
-import {Card, Form, Button, Nav, FormControl, Alert, Navbar} from 'react-bootstrap';
 import {Fragment} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navigation from './components/Navigation';

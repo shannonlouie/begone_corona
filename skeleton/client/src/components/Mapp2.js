@@ -5,6 +5,7 @@ import {
   withScriptjs
 } from "react-google-maps";
 import fire from './fire';
+import CalloutCard from './CalloutCard'
 
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
@@ -131,7 +132,9 @@ handleClick = () => {
 						loadingElement={<div style={{ height: `100%` }} />}
 						containerElement={<div style={{ height: `100%` }} />}
 						mapElement={<div style={{ height: `100%` }} />}
+						showLegend={false}
 					/>
+					<CalloutCard/>
 				</div>
 
 

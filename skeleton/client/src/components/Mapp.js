@@ -5,7 +5,7 @@ import {
   withScriptjs
 } from "react-google-maps";
 import fire from './fire';
-
+import Legend from './Legend'
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
 
@@ -122,6 +122,7 @@ handleClick = () => {
 				<div style={{ width: "100vw", height: "100vh" }}>
 					
 					<MapWrapped
+					style={{ width: "100vw", height: "70vh" }}
 						safeloc = {this.state.safe_areas}
 						responders = {this.state.responders}
 						type = {this.state.extra}
@@ -131,6 +132,7 @@ handleClick = () => {
 						loadingElement={<div style={{ height: `100%` }} />}
 						containerElement={<div style={{ height: `100%` }} />}
 						mapElement={<div style={{ height: `100%` }} />}
+						showLegend={true}
 					/>
 				</div>
 

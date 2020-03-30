@@ -6,7 +6,7 @@ import {
   Marker,
   InfoWindow
 } from "react-google-maps";
-import mapStyles from "./mapStyles";
+import Legend from "./Legend";
 
 
 function Map(props) {
@@ -153,6 +153,7 @@ onClick={() => {
         </InfoWindow>
       )}
     </GoogleMap>
+    {props.showLegend &&<Legend/>}
     {false && <p id="demo"></p>}
     </div>
   );
