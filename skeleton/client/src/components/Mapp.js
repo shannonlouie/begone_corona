@@ -23,9 +23,12 @@ export default class Mapp extends React.Component {
 		let safe_areas_ref = fire.database().ref('safeloc').orderByKey().limitToLast(100);
 		safe_areas_ref.on('child_added', snapshot => {
 		  /* Update React state  */
+		  
 		  let safe_area = { text: JSON.stringify(snapshot.val()), id: snapshot.key };
 		  this.setState({ safe_areas: [safe_area].concat(this.state.safe_areas) });
 		})
+		console.log("data schema aaa")
+		console.log(this.state.safe_areas)
 
 		//
 		// reference to RESPONDERS in firebase database
@@ -113,7 +116,8 @@ showError = (error) => {
   }
 }
 handleClick = () => {
-    console.log('this is:', this);
+	console.log('this is:', this);
+	console.log(this.state.safe_areas)
   }
 
 	render() {
@@ -133,6 +137,7 @@ handleClick = () => {
 						containerElement={<div style={{ height: `100%` }} />}
 						mapElement={<div style={{ height: `100%` }} />}
 						showLegend={true}
+						onClick={this.handleClick}
 					/>
 				</div>
 

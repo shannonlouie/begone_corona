@@ -1,9 +1,10 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
+import BucketList from './BucketList'
 
 const Landing = props => {
     return (
-        <div className="landing">
+        <div className="">
             <div className="dark-overlay">
                 <div className="landing-inner">
                     <h1 className="f1 fw6">Let's Surply those in need!</h1>
@@ -21,6 +22,8 @@ const Landing = props => {
                     </div>
                 </div>
             </div>
+            <BucketList/>
+
         </div>
     )
 }

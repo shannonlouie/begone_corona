@@ -20,8 +20,8 @@ class CalloutCard extends Component {
 	render() {
 		return(
 			<div>
-				<Card>
-          <Card style={{ width: '25rem' }}>
+				<Card style={{"backgroundColor":"#B2EADE"}}>
+          <Card style={{ width: '100%', height:'100vh', margin:5, "backgroundColor":"#E6FFFA", padding:"5px"}}>
           <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
           <Card.Body>
             <Card.Title>{this.props.name}</Card.Title>

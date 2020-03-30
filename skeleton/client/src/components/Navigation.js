@@ -19,6 +19,11 @@ class Navigation extends Component {
                         Give Surplus
                     </span>
                 </Nav.Link>
+                <Nav.Link href="/BucketList" className="text-white">
+                    <span className="green-hover">
+                        Organize Life
+                    </span>
+                </Nav.Link>
          </Fragment>
         }
     

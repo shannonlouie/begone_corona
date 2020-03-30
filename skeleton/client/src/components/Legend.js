@@ -18,7 +18,7 @@ class Legend extends Component {
 	render() {
     return(
       <div>
-        <Card>
+        <Card style={{"backgroundColor":"#B2EADE"}}>
           <Card.Body>
             <Card.Title>Legend</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">{this.props.itemName}</Card.Subtitle>
@@ -44,10 +44,7 @@ class Legend extends Component {
                   />
                 ))}
               </Form>
-            </Card.Text>
-            <Button variant="primary" size="lg" block>
-              Submit Request for Supplies
-            </Button>
+
             <InputGroup className="mb-3">
             <FormControl
               placeholder="Search"
@@ -58,6 +55,10 @@ class Legend extends Component {
               <Button variant="outline-secondary">Search</Button>
             </InputGroup.Append>
           </InputGroup>
+            </Card.Text>
+            <Button variant="primary" size="lg" block>
+              Submit Request for Supplies
+            </Button>
           </Card.Body>
         </Card>
       </div>

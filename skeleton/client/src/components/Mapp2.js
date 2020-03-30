@@ -134,7 +134,6 @@ handleClick = () => {
 						mapElement={<div style={{ height: `100%` }} />}
 						showLegend={false}
 					/>
-					<CalloutCard/>
 				</div>
 
 

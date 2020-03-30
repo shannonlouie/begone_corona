@@ -7,7 +7,7 @@ import {
   InfoWindow
 } from "react-google-maps";
 import Legend from "./Legend";
-
+import CalloutCard from "./CalloutCard"
 
 function Map(props) {
   const [selectedPark, setSelectedPark, center] = useState(null);
@@ -62,7 +62,7 @@ function Map(props) {
 
             icon={{
               url: "/green.png",
-              scaledSize: new window.google.maps.Size(25,45)
+              scaledSize: new window.google.maps.Size(45,45)
             }}
 		/>
 	))}
@@ -78,7 +78,7 @@ function Map(props) {
           }}
             icon={{
               url: "/red.png",
-              scaledSize: new window.google.maps.Size(25,45)
+              scaledSize: new window.google.maps.Size(75,75)
             }}
 	
 		/>
@@ -99,41 +99,7 @@ function Map(props) {
             }}
 		/>
 	))}
-	{props.responders.map(loc => (
-		<Marker
-		key={JSON.parse(loc["text"])["properties"]["ID"]}
-		position={{
-			lat:JSON.parse(loc["text"])["geometry"]["coordinates"][1],
-			lng:JSON.parse(loc["text"])["geometry"]["coordinates"][0]
-		}}
-onClick={() => {
-	setSelectedPark(JSON.parse(loc["text"]));
-          }}
-            icon={{
-              url: "/yellow.png",
-              scaledSize: new window.google.maps.Size(45,45)
-            }}
-		/>
-	))}
 	
-	{
-
-	props.safeloc.map(loc => (
-		<Marker
-			key={JSON.parse(loc["text"])["properties"]["ID"]}
-			position={{
-				lat:JSON.parse(loc["text"])["geometry"]["coordinates"][1],
-				lng:JSON.parse(loc["text"])["geometry"]["coordinates"][0]
-			}}
-onClick={() => {
-            setSelectedPark(JSON.parse(loc["text"]));
-          }}
-            icon={{
-			  url: "/white.png",
-              scaledSize: new window.google.maps.Size(45,45)
-            }}
-		/>
-	))}
 
 
       {selectedPark && (
@@ -153,8 +119,11 @@ onClick={() => {
         </InfoWindow>
       )}
     </GoogleMap>
-    {props.showLegend &&<Legend/>}
-    {false && <p id="demo"></p>}
+
+    {!props.showLegend && <div style={{width:"50vw", height:"100vh", position:"absolute",top:20,right:0}}>
+					<CalloutCard name="Alta Bates" email="contact@abates.com" phone="(510) 655-4000" urgentNeeds="toilet paper"/>
+					</div>}
+    {props.showLegend &&<div style={{width:"100vw", height:"20vh", position:"absolute",bottom:95,right:0}}><Legend/></div>}
     </div>
   );
 }
